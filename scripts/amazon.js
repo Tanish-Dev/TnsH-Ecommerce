@@ -1,4 +1,4 @@
-import { cart } from "../data/cart.js";
+import { cart, addtocart } from "../data/cart.js";
 import { products } from "../data/products.js";
 
 let productsHTMl = "";
@@ -60,6 +60,14 @@ products.forEach((product) => {
 
 document.querySelector(".js-products-grid").innerHTML = productsHTMl;
 
+function updateCartCount() {
+  let cartCount = 0;
+  cart.forEach((cartItem) => {
+    cartCount += cartItem.quantity;
+  });
+  document.querySelector(".js-cart-count").innerHTML = cartCount;
+}
+
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   button.addEventListener("click", (event) => {
     document.querySelector(".js-added-to-cart").classList.add("added");
@@ -67,26 +75,7 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
       document.querySelector(".js-added-to-cart").classList.remove("added");
     }, 2000);
     const productsId = button.dataset.productId;
-    let matchingitem;
-    cart.forEach((item) => {
-      if (item.id === productsId) {
-        matchingitem = item;
-      }
-    });
-    if (matchingitem) {
-      matchingitem.quantity++;
-      console.log("Item already in cart, quantity updated.");
-    } else {
-      console.log("Item not in cart, adding new item.");
-      cart.push({
-        id: productsId,
-        quantity: 1,
-      });
-    }
-    let cartCount = 0;
-    cart.forEach((item) => {
-      cartCount += item.quantity;
-    });
-    document.querySelector(".js-cart-count").innerHTML = cartCount;
+    addtocart(productsId);
+    updateCartCount();
   });
 });
