@@ -1,10 +1,12 @@
 import { products } from "../data/products.js";
 import { cart } from "../data/cart.js";
+import { formatcurrency } from "./utils/money.js";
 
 let checkoutproductsHTMl = "";
 
 cart.forEach((cartItem) => {
   const productsId = cartItem.id;
+
   let matchingitem;
 
   products.forEach((product) => {
@@ -27,11 +29,13 @@ cart.forEach((cartItem) => {
                 <div class="product-name">
                   ${matchingitem.name}
                 </div>
-                <div class="product-price">$${(
-                  matchingitem.priceCents / 100
-                ).toFixed(2)}</div>
+                <div class="product-price">$${formatcurrency(
+                  matchingitem.priceCents
+                )}</div>
                 <div class="product-quantity">
-                  <span> Quantity: <span class="quantity-label">2</span> </span>
+                  <span> Quantity: <span class="quantity-label">${
+                    cartItem.quantity
+                  }</span></span>
                   <span class="update-quantity-link link-primary">
                     Update
                   </span>
@@ -50,7 +54,7 @@ cart.forEach((cartItem) => {
                     type="radio"
                     checked
                     class="delivery-option-input"
-                    name="delivery-option-1"
+                    name="delivery-option-${matchingitem.id}"
                   />
                   <div>
                     <div class="delivery-option-date">Tuesday, June 21</div>
@@ -61,7 +65,7 @@ cart.forEach((cartItem) => {
                   <input
                     type="radio"
                     class="delivery-option-input"
-                    name="delivery-option-1"
+                    name="delivery-option-${matchingitem.id}"
                   />
                   <div>
                     <div class="delivery-option-date">Wednesday, June 15</div>
@@ -72,7 +76,7 @@ cart.forEach((cartItem) => {
                   <input
                     type="radio"
                     class="delivery-option-input"
-                    name="delivery-option-1"
+                    name="delivery-option-${matchingitem.id}"
                   />
                   <div>
                     <div class="delivery-option-date">Monday, June 13</div>
