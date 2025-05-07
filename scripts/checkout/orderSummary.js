@@ -7,6 +7,7 @@ import {
   deliveryOption,
   getDeliveryOption,
 } from "../../data/deliveryOption.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 hello();
 
@@ -124,6 +125,7 @@ export function renderOrderSummary() {
         .querySelector(`.js-cart-item-container${productId}`)
         .remove();
       console.log(container);
+      renderPaymentSummary();
     });
   });
 
@@ -136,6 +138,7 @@ export function renderOrderSummary() {
       updatedeliveryoption(productId, deliveryOptionId);
 
       renderOrderSummary();
+      renderPaymentSummary();
     });
   });
 }
