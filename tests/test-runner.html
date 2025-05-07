@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Project Tests</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        color: #232f3e;
+      }
+      #test-output {
+        background: #f8f8f8;
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 4px;
+        white-space: pre;
+        font-family: monospace;
+      }
+      #debug-output {
+        margin-top: 20px;
+        background: #ffe;
+        border: 1px solid #dda;
+        padding: 15px;
+        border-radius: 4px;
+      }
+      .success {
+        color: green;
+      }
+      .failure {
+        color: red;
+      }
+      .warning {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Amazon Project Test Results</h1>
+    <p>This page runs automated tests on the Amazon project functionality.</p>
+
+    <div id="test-output">Test output will appear here...</div>
+    <div id="debug-output">Debug information will appear here...</div>
+
+    <script>
+      // Add some initial debug info
+      document.getElementById("debug-output").innerHTML =
+        "Page loaded at: " +
+        new Date().toLocaleTimeString() +
+        "<br>" +
+        "Browser: " +
+        navigator.userAgent;
+    </script>
+
+    <script type="module">
+      // Add debug info
+      document.getElementById("debug-output").innerHTML +=
+        "<br>Script module started";
+
+      // Redirect console output to our test-output div
+      const testOutput = document.getElementById("test-output");
+      testOutput.textContent = "Tests starting...";
+
+      try {
+        const originalConsoleLog = console.log;
+        console.log = function (...args) {
+          originalConsoleLog.apply(console, args);
+
+          const text = args.join(" ");
+          let span = document.createElement("div");
+
+          if (text.includes("✅ SUCCESS")) {
+            span.className = "success";
+          } else if (text.includes("❌ FAILED")) {
+            span.className = "failure";
+          } else if (text.includes("⚠️ WARNING")) {
+            span.className = "warning";
+          }
+
+          span.textContent = text;
+          testOutput.appendChild(span);
+          document.getElementById("debug-output").innerHTML +=
+            "<br>Log captured: " + text.substring(0, 20) + "...";
+        };
+
+        // Import and run the simpler test script first
+        document.getElementById("debug-output").innerHTML +=
+          "<br>About to import simple test";
+        import("./simpleTest.js")
+          .then(() => {
+            document.getElementById("debug-output").innerHTML +=
+              "<br>Simple test completed successfully";
+          })
+          .catch((error) => {
+            document.getElementById("debug-output").innerHTML +=
+              "<br>Error in simple test: " + error.message;
+            testOutput.innerHTML +=
+              '<div class="failure">Error loading test: ' +
+              error.message +
+              "</div>";
+          });
+      } catch (error) {
+        document.getElementById("debug-output").innerHTML +=
+          "<br>Error in setup: " + error.message;
+        testOutput.innerHTML = "Error setting up tests: " + error.message;
+      }
+    </script>
+
+    <div style="margin-top: 20px">
+      <h2>Manual Testing Checklist</h2>
+      <ul>
+        <li>Open amazon.html and verify products are displayed correctly</li>
+        <li>Try adding items to the cart and verify the cart count updates</li>
+        <li>
+          Navigate to checkout.html and verify items appear in the order summary
+        </li>
+        <li>Test changing delivery options and verify dates/costs update</li>
+        <li>Test deleting items from the cart</li>
+      </ul>
+    </div>
+  </body>
+</html>

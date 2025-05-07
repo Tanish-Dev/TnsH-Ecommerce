@@ -82,6 +82,7 @@ export function renderOrderSummary() {
 
   function deliveryOptionsHTML(matchingitem, cartItem) {
     let html = "";
+
     deliveryOption.forEach((DeliveryOption) => {
       const today = dayjs();
       const deliveryDate = today.add(DeliveryOption.deliverydays, "days");
