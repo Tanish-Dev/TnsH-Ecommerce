@@ -4,6 +4,7 @@ import { formatcurrency } from "./utils/money.js";
 import { hello } from "https://unpkg.com/supersimpledev@1.0.1/hello.esm.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 import { deliveryOption } from "../data/deliveryOption.js";
+import { updatedeliveryoption } from "../data/cart.js";
 
 hello();
 
@@ -99,7 +100,9 @@ function deliveryOptionsHTML(matchingitem, cartItem) {
     const isChecked = DeliveryOption.id === cartItem.deliveryOptionId;
 
     html += `
-                <div class="delivery-option">
+                <div class="delivery-option js-delivery-option" data-product-id="${
+                  matchingitem.id
+                }" data-delivery-option-id="${DeliveryOption.id}">
                   <input
                     type="radio"
                     ${isChecked ? "checked" : ""}
@@ -132,3 +135,14 @@ document.querySelectorAll(".delete-quantity-link").forEach((link) => {
 });
 
 hello();
+
+document.querySelectorAll(".js-delivery-option").forEach((element) => {
+  element.addEventListener("click", () => {
+    const productId = element.dataset.productId;
+    const deliveryOptionId = element.dataset.deliveryOptionId;
+    updatedeliveryoption(productId, deliveryOptionId);
+
+    // Refresh the page to update the delivery date display
+    location.reload();
+  });
+});
