@@ -1,14 +1,14 @@
 import { addtocart } from "./cart.js";
 
 class Cart {
-  cartItems = undefined;
-  localStoragekey = undefined;
+  cartItems;
+  #localStoragekey;
   constructor(localStoragekey) {
-    this.localStoragekey = localStoragekey;
+    this.#localStoragekey = localStoragekey;
     this.loadFromStorage();
   }
   loadFromStorage() {
-    this.cartItems = JSON.parse(localStorage.getItem(this.localStoragekey));
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localStoragekey));
     if (!this.cartItems) {
       this.cartItems = [
         {
@@ -25,7 +25,7 @@ class Cart {
     }
   }
   savetostorage() {
-    localStorage.setItem(this.localStoragekey, JSON.stringify(this.cartItems));
+    localStorage.setItem(this.#localStoragekey, JSON.stringify(this.cartItems));
   }
   addtocart(productsId) {
     let matchingitem;
