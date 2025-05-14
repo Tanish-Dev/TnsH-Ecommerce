@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       image: "images/products/men-cozy-fleece-zip-up-hoodie-red.jpg",
-      name: "Men Cozy Fleece Zip-Up Hoodie - Red",
+      name: "Men Cozy Fleece Zip-Up Hoodie",
       price: "35.99",
       rating: 4.8,
     },
