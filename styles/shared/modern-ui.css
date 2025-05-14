@@ -144,13 +144,12 @@
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 2vw;
-  border: 0.8px solid #e0e0e0;
+  border: 0.8px solid #9a9a9a;
 }
 
 .carousel-product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-  border-color: #ccc;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: #9a9a9a;
 }
 
 .carousel-image-container {
