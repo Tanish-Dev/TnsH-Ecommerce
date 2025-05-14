@@ -1,4 +1,5 @@
 // Trending Products Carousel Functionality
+
 document.addEventListener("DOMContentLoaded", function () {
   // Sample trending products - in a real app, these would come from your products data
   const trendingProducts = [
