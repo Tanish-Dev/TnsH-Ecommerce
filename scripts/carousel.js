@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <h3 class="carousel-product-name">${product.name}</h3>
         <div class="carousel-product-rating">${ratingStars}</div>
         <div class="carousel-product-price">$${product.price}</div>
-        <button class="carousel-add-to-cart button-secondary">Add to Cart</button>
+        <button class="carousel-add-to-cart button-secondary js-add-to-cart" data-product-id="${product.id}">Add to Cart</button>
       </div>
     `;
 
@@ -160,5 +160,21 @@ document.addEventListener("DOMContentLoaded", function () {
       alert(`Added ${productName} to cart!`);
       // In a real app, you would call your add to cart function here
     });
+  });
+});
+
+document.querySelectorAll(".js-add-to-cart").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    document
+      .querySelector(`.js-added-to-cart${button.dataset.productId}`)
+      .classList.add("added");
+    setTimeout(() => {
+      document
+        .querySelector(`.js-added-to-cart${button.dataset.productId}`)
+        .classList.remove("added");
+    }, 2000);
+    const productsId = button.dataset.productId;
+    addtocart(productsId);
+    updateCartCount();
   });
 });
