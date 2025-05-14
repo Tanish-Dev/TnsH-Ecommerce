@@ -290,7 +290,6 @@
   padding: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   flex: 1;
-  min-width: 300px;
   max-width: 380px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
