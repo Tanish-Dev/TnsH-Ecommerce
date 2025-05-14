@@ -229,6 +229,7 @@
   font-weight: 300;
   color: #555;
   letter-spacing: -0.02vw;
+  display: none;
 }
 
 .secure-checkout i {

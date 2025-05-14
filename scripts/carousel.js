@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Sample trending products - in a real app, these would come from your products data
   const trendingProducts = [
     {
-      image: "images/istockphoto-175537625-612x612.jpg",
+      image: "images/products/knit-athletic-sneakers-gray.jpg",
       name: "Knit Athletic Sneakers - Gray",
       price: "45.99",
       rating: 4.5,
@@ -58,6 +58,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevButton = document.querySelector(".prev-button");
   const nextButton = document.querySelector(".next-button");
 
+  // Clear the track first
+  track.innerHTML = "";
+
   // Populate the carousel with items
   trendingProducts.forEach((product) => {
     const item = document.createElement("div");
@@ -86,29 +89,72 @@ document.addEventListener("DOMContentLoaded", function () {
   const itemWidth = 320; // width of each item including margin
   const visibleItems = Math.floor(track.parentElement.offsetWidth / itemWidth);
   const maxPosition = trendingProducts.length - visibleItems;
+  let autoScrollInterval;
 
   // Function to update carousel position
   function updateCarouselPosition() {
     track.style.transform = `translateX(-${position * itemWidth}px)`;
 
-    // Enable/disable buttons based on position
-    prevButton.disabled = position === 0;
-    nextButton.disabled = position >= maxPosition;
+    // For continuous scroll, we don't disable buttons
+    prevButton.style.opacity = "1";
+    nextButton.style.opacity = "1";
+  }
 
-    prevButton.style.opacity = position === 0 ? "0.5" : "1";
-    nextButton.style.opacity = position >= maxPosition ? "0.5" : "1";
+  // Continuous scroll function
+  function startAutoScroll() {
+    clearInterval(autoScrollInterval);
+    autoScrollInterval = setInterval(() => {
+      if (position >= maxPosition) {
+        // If we reach the end, gradually reset to beginning
+        position = 0;
+      } else {
+        position += 1;
+      }
+      updateCarouselPosition();
+    }, 3000);
   }
 
   // Event listeners for buttons
   prevButton.addEventListener("click", () => {
-    position = Math.max(0, position - 1);
+    if (position <= 0) {
+      // If at beginning, jump to end
+      position = maxPosition;
+    } else {
+      position--;
+    }
     updateCarouselPosition();
+
+    // Reset auto-scroll timer when user interacts
+    clearInterval(autoScrollInterval);
+    startAutoScroll();
   });
 
   nextButton.addEventListener("click", () => {
-    position = Math.min(maxPosition, position + 1);
+    if (position >= maxPosition) {
+      // If at end, jump to beginning
+      position = 0;
+    } else {
+      position++;
+    }
     updateCarouselPosition();
+
+    // Reset auto-scroll timer when user interacts
+    clearInterval(autoScrollInterval);
+    startAutoScroll();
   });
+
+  // Pause scrolling when hovering over carousel
+  const carouselContainer = document.querySelector(".carousel-container");
+  carouselContainer.addEventListener("mouseenter", () => {
+    clearInterval(autoScrollInterval);
+  });
+
+  carouselContainer.addEventListener("mouseleave", () => {
+    startAutoScroll();
+  });
+
+  // Start auto-scrolling
+  startAutoScroll();
 
   // Initialize position
   updateCarouselPosition();

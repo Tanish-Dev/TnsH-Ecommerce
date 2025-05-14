@@ -104,5 +104,5 @@ if (foundProduct && foundProduct.id === randomProductId) {
 
 console.log("\n=== FINISHED TESTING ===");
 console.log(
-  "Run checkout.html and amazon.html in browser to verify UI functionality"
+  "Run checkout.html and index.html in browser to verify UI functionality"
 );
