@@ -18,29 +18,42 @@
 
     <!-- Here are the CSS files for this page. -->
     <link rel="stylesheet" href="styles/shared/general.css" />
-    <link rel="stylesheet" href="styles/pages/checkout/checkout-header.css" />
+    <link rel="stylesheet" href="styles/shared/header.css" />
+    <link rel="stylesheet" href="styles/shared/footer.css" />
     <link rel="stylesheet" href="styles/pages/checkout/checkout.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="checkout-header">
-      <div class="header-content">
-        <div class="checkout-header-left-section">
-          <a href="amazon.html">
-            <img class="amazon-logo" src="images/amazon-logo.png" />
-            <img
-              class="amazon-mobile-logo"
-              src="images/amazon-mobile-logo.png"
-            />
-          </a>
+    <div class="amazon-header">
+      <div class="amazon-header-left-section">
+        <div class="header-nav-links">
+          <ul class="header-links">
+            <li>
+              <a href="our-story.html" class="header-link-text">Our Story</a>
+            </li>
+            <li>
+              <a href="our-collections.html" class="header-link-text"
+                >Collections</a
+              >
+            </li>
+            <li><a href="sale.html" class="header-link-text">Sale</a></li>
+          </ul>
         </div>
+      </div>
 
-        <div class="checkout-header-middle-section">
-          Checkout (<a class="return-to-home-link" href="amazon.html">3 items</a
-          >)
-        </div>
+      <div class="amazon-header-center-section">
+        <a href="amazon.html" class="header-link logo-link">
+          <h1 class="brand-logo">TnsH</h1>
+        </a>
+      </div>
 
-        <div class="checkout-header-right-section">
-          <img src="images/icons/checkout-lock-icon.png" />
+      <div class="amazon-header-right-section">
+        <div class="secure-checkout">
+          <i class="fas fa-lock"></i>
+          <span>Secure Checkout</span>
         </div>
       </div>
     </div>
@@ -54,6 +67,81 @@
         <div class="payment-summary js-payment-summary"></div>
       </div>
     </div>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3 class="footer-title">Shop</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">New Arrivals</a></li>
+            <li><a href="#" class="footer-link">Bestsellers</a></li>
+            <li><a href="#" class="footer-link">Sale</a></li>
+            <li><a href="#" class="footer-link">Collections</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">Help</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Customer Service</a></li>
+            <li><a href="#" class="footer-link">Shipping</a></li>
+            <li><a href="#" class="footer-link">Returns</a></li>
+            <li><a href="#" class="footer-link">Size Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">About</h3>
+          <ul class="footer-links">
+            <li><a href="our-story.html" class="footer-link">Our Story</a></li>
+            <li><a href="#" class="footer-link">Sustainability</a></li>
+            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">Follow Us</h3>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Pinterest"
+              ><i class="fab fa-pinterest-p"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
+          <div class="newsletter">
+            <h4 class="newsletter-title">Subscribe to our newsletter</h4>
+            <div class="newsletter-form">
+              <input
+                type="email"
+                placeholder="Your email"
+                aria-label="Email for newsletter"
+                class="newsletter-input"
+              />
+              <button aria-label="Subscribe" class="newsletter-button">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2023 TnsH. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="#" class="footer-bottom-link">Privacy Policy</a></li>
+          <li><a href="#" class="footer-bottom-link">Terms of Service</a></li>
+          <li><a href="#" class="footer-bottom-link">Accessibility</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
   <script type="module" src="scripts/checkout.js"></script>
 </html>

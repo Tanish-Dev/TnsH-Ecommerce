@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sale - TnsH</title>
+
+    <!-- This code is needed for responsive design to work. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Load fonts from Google Fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Load Didot font as a web font -->
+    <style>
+      @font-face {
+        font-family: "Didot";
+        src: url("https://fonts.cdnfonts.com/css/didot");
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <!-- Here are the CSS files for this page. -->
+    <link rel="stylesheet" href="styles/shared/general.css" />
+    <link rel="stylesheet" href="styles/shared/header.css" />
+    <link rel="stylesheet" href="styles/shared/components.css" />
+    <link rel="stylesheet" href="styles/shared/modern-ui.css" />
+    <link rel="stylesheet" href="styles/shared/hero.css" />
+    <link rel="stylesheet" href="styles/shared/footer.css" />
+    <link rel="stylesheet" href="styles/pages/sale.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="amazon-header">
+      <div class="amazon-header-left-section">
+        <div class="header-nav-links">
+          <ul class="header-links">
+            <li>
+              <a href="our-story.html" class="header-link-text">Our Story</a>
+            </li>
+            <li>
+              <a href="our-collections.html" class="header-link-text"
+                >Collections</a
+              >
+            </li>
+            <li><a href="sale.html" class="header-link-text">Sale</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="amazon-header-center-section">
+        <a href="amazon.html" class="header-link logo-link">
+          <h1 class="brand-logo">TnsH</h1>
+        </a>
+      </div>
+
+      <div class="amazon-header-right-section">
+        <div class="search-container">
+          <input
+            class="search-bar"
+            type="text"
+            placeholder="Search"
+            aria-label="Search products"
+          />
+          <button class="search-button" aria-label="Search">
+            <i class="fas fa-search search-icon"></i>
+          </button>
+        </div>
+
+        <a href="orders.html" class="orders-link header-link">
+          <i class="fas fa-box"></i>
+        </a>
+
+        <a href="checkout.html" class="cart-link header-link">
+          <i class="fas fa-shopping-bag"></i>
+          <div class="cart-quantity js-cart-quantity">0</div>
+        </a>
+      </div>
+    </div>
+
+    <main class="sale-main">
+      <div class="sale-hero">
+        <h1 class="sale-title">Seasonal Sale</h1>
+        <p class="sale-subtitle">
+          Enjoy up to 50% off on selected items for a limited time
+        </p>
+        <div class="countdown-container">
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="sale-categories">
+        <div class="category-tabs">
+          <button class="category-tab active" data-category="all">All</button>
+          <button class="category-tab" data-category="apparel">Apparel</button>
+          <button class="category-tab" data-category="home">Home</button>
+          <button class="category-tab" data-category="accessories">
+            Accessories
+          </button>
+        </div>
+      </section>
+
+      <section class="sale-products">
+        <div class="sale-grid">
+          <!-- Product Item 1 -->
+          <div class="sale-product" data-category="apparel">
+            <div class="product-badge">-30%</div>
+            <div class="product-image-container">
+              <img
+                src="images/products/men-cozy-fleece-zip-up-hoodie-red.jpg"
+                alt="Red Hoodie"
+                class="product-image"
+              />
+              <div class="hover-actions">
+                <a href="checkout.html" class="quick-add">Add to Cart</a>
+              </div>
+            </div>
+            <h3 class="product-name">Cozy Fleece Hoodie</h3>
+            <div class="product-price-container">
+              <span class="original-price">$49.99</span>
+              <span class="discounted-price">$34.99</span>
+            </div>
+          </div>
+
+          <!-- Product Item 2 -->
+          <div class="sale-product" data-category="home">
+            <div class="product-badge">-40%</div>
+            <div class="product-image-container">
+              <img
+                src="images/products/luxury-tower-set-6-piece.jpg"
+                alt="Towel Set"
+                class="product-image"
+              />
+              <div class="hover-actions">
+                <a href="checkout.html" class="quick-add">Add to Cart</a>
+              </div>
+            </div>
+            <h3 class="product-name">Luxury Towel Set</h3>
+            <div class="product-price-container">
+              <span class="original-price">$59.99</span>
+              <span class="discounted-price">$35.99</span>
+            </div>
+          </div>
+
+          <!-- Product Item 3 -->
+          <div class="sale-product" data-category="accessories">
+            <div class="product-badge">-25%</div>
+            <div class="product-image-container">
+              <img
+                src="images/products/round-sunglasses-black.jpg"
+                alt="Black Sunglasses"
+                class="product-image"
+              />
+              <div class="hover-actions">
+                <a href="checkout.html" class="quick-add">Add to Cart</a>
+              </div>
+            </div>
+            <h3 class="product-name">Round Sunglasses</h3>
+            <div class="product-price-container">
+              <span class="original-price">$29.99</span>
+              <span class="discounted-price">$22.49</span>
+            </div>
+          </div>
+
+          <!-- Product Item 4 -->
+          <div class="sale-product" data-category="apparel">
+            <div class="product-badge">-50%</div>
+            <div class="product-image-container">
+              <img
+                src="images/products/men-slim-fit-summer-shorts-gray.jpg"
+                alt="Gray Shorts"
+                class="product-image"
+              />
+              <div class="hover-actions">
+                <a href="checkout.html" class="quick-add">Add to Cart</a>
+              </div>
+            </div>
+            <h3 class="product-name">Slim Fit Shorts</h3>
+            <div class="product-price-container">
+              <span class="original-price">$39.99</span>
+              <span class="discounted-price">$19.99</span>
+            </div>
+          </div>
+
+          <!-- Product Item 5 -->
+          <div class="sale-product" data-category="home">
+            <div class="product-badge">-35%</div>
+            <div class="product-image-container">
+              <img
+                src="images/products/duvet-cover-set-blue-twin.jpg"
+                alt="Duvet Cover"
+                class="product-image"
+              />
+              <div class="hover-actions">
+                <a href="checkout.html" class="quick-add">Add to Cart</a>
+              </div>
+            </div>
+            <h3 class="product-name">Blue Duvet Cover Set</h3>
+            <div class="product-price-container">
+              <span class="original-price">$89.99</span>
+              <span class="discounted-price">$58.49</span>
+            </div>
+          </div>
+
+          <!-- Product Item 6 -->
+          <div class="sale-product" data-category="accessories">
+            <div class="product-badge">-45%</div>
+            <div class="product-image-container">
+              <img
+                src="images/products/double-elongated-twist-french-wire-earrings.webp"
+                alt="Earrings"
+                class="product-image"
+              />
+              <div class="hover-actions">
+                <a href="checkout.html" class="quick-add">Add to Cart</a>
+              </div>
+            </div>
+            <h3 class="product-name">Twist Earrings</h3>
+            <div class="product-price-container">
+              <span class="original-price">$79.99</span>
+              <span class="discounted-price">$43.99</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="promo-banner">
+        <div class="promo-content">
+          <h2 class="promo-title">Extra 10% Off</h2>
+          <p class="promo-text">
+            Use code <strong>EXTRA10</strong> at checkout
+          </p>
+          <a href="#" class="promo-button">Shop All Sale</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top-container">
+      <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3 class="footer-title">Shop</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">New Arrivals</a></li>
+            <li>
+              <a href="our-collections.html" class="footer-link">Collections</a>
+            </li>
+            <li><a href="sale.html" class="footer-link">Sale</a></li>
+            <li><a href="#" class="footer-link">Bestsellers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">Help</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Customer Service</a></li>
+            <li><a href="#" class="footer-link">Shipping</a></li>
+            <li><a href="#" class="footer-link">Returns</a></li>
+            <li><a href="#" class="footer-link">Size Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">About</h3>
+          <ul class="footer-links">
+            <li><a href="our-story.html" class="footer-link">Our Story</a></li>
+            <li><a href="#" class="footer-link">Sustainability</a></li>
+            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">Follow Us</h3>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Pinterest"
+              ><i class="fab fa-pinterest-p"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
+          <div class="newsletter">
+            <h4 class="newsletter-title">Subscribe to our newsletter</h4>
+            <div class="newsletter-form">
+              <input
+                type="email"
+                placeholder="Your email"
+                aria-label="Email for newsletter"
+                class="newsletter-input"
+              />
+              <button aria-label="Subscribe" class="newsletter-button">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2023 TnsH. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="#" class="footer-bottom-link">Privacy Policy</a></li>
+          <li><a href="#" class="footer-bottom-link">Terms of Service</a></li>
+          <li><a href="#" class="footer-bottom-link">Accessibility</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="scripts/back-to-top.js"></script>
+    <script src="scripts/sale.js"></script>
+  </body>
+</html>

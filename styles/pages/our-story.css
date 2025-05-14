@@ -1,0 +1,338 @@
+/* Story Hero Section */
+.story-hero-section {
+  height: 70vh;
+  min-height: 550px;
+  margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1560749003-f4b1e17e2dff?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80");
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+  filter: grayscale(100%);
+}
+
+.story-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: 2;
+}
+
+.story-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.story-tag {
+  display: inline-block;
+  background-color: white;
+  color: #222;
+  padding: 10px 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 30px;
+  font-weight: 200;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.3s;
+}
+
+.story-title {
+  font-size: 5vw;
+  margin-bottom: 30px;
+  font-weight: 200;
+  line-height: 1.1;
+  letter-spacing: -0.02vw;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.5s;
+}
+
+.story-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  font-weight: 200;
+  letter-spacing: -0.02vw;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.7s;
+}
+
+/* Story Content Section */
+.story-content-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.story-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.story-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+  gap: 50px;
+}
+
+.story-section.reversed {
+  flex-direction: row-reverse;
+}
+
+.story-text {
+  flex: 1;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 200;
+  margin-bottom: 30px;
+  letter-spacing: -0.02vw;
+}
+
+.section-title.centered {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.story-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-weight: 300;
+  color: #333;
+}
+
+.story-button {
+  display: inline-block;
+  background-color: #222;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.story-button:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+.story-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.story-img-container {
+  width: 100%;
+  height: 400px;
+  background-color: #f5f5f5;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.image-right .story-img-container {
+  background-image: url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1169&q=80");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+.image-left .story-img-container {
+  background-image: url("https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+.story-section:last-of-type .image-right .story-img-container {
+  background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1171&q=80");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+.story-caption {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Quote Section */
+.story-quote-section {
+  margin: 120px 0;
+  text-align: center;
+}
+
+.story-quote {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.story-quote p {
+  font-size: 2.2rem;
+  line-height: 1.4;
+  font-weight: 200;
+  font-style: italic;
+  letter-spacing: -0.02vw;
+  margin-bottom: 30px;
+  font-family: "Playfair Display", serif;
+}
+
+.quote-attribution {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Values Section */
+.story-values-section {
+  margin: 120px 0;
+}
+
+.values-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.value-card {
+  flex: 1;
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.value-title {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 15px;
+  letter-spacing: -0.02vw;
+}
+
+.value-description {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .story-title {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-section,
+  .story-section.reversed {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .story-title {
+    font-size: 8vw;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .story-quote p {
+    font-size: 1.8rem;
+  }
+
+  .values-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-hero-section {
+    height: 60vh;
+    min-height: 450px;
+  }
+
+  .story-title {
+    font-size: 10vw;
+    margin-bottom: 20px;
+  }
+
+  .story-tag {
+    margin-bottom: 20px;
+    padding: 8px 16px;
+  }
+
+  .story-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .story-section {
+    margin-bottom: 60px;
+  }
+
+  .story-quote-section {
+    margin: 80px 0;
+  }
+
+  .story-quote p {
+    font-size: 1.5rem;
+  }
+}

@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Amazon Project</title>
+    <title>Our Story - TnsH</title>
 
-    <!-- This code is needed for responsive design to work.
-      (Responsive design = make the website look good on
-      smaller screen sizes like a phone or a tablet). -->
+    <!-- This code is needed for responsive design to work. -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Load fonts from Google Fonts. -->
@@ -32,13 +30,14 @@
     <link rel="stylesheet" href="styles/shared/modern-ui.css" />
     <link rel="stylesheet" href="styles/shared/hero.css" />
     <link rel="stylesheet" href="styles/shared/footer.css" />
-    <link rel="stylesheet" href="styles/pages/amazon.css" />
+    <link rel="stylesheet" href="styles/pages/our-story.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
   </head>
   <body>
+    <!-- Header Section -->
     <div class="amazon-header">
       <div class="amazon-header-left-section">
         <div class="header-nav-links">
@@ -94,119 +93,138 @@
       </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-slider">
-        <div class="hero-slide active">
-          <div class="hero-image"></div>
-          <div class="hero-overlay"></div>
-          <div class="hero-content">
-            <div class="hero-content-inner">
-              <div class="hero-tag">New Collection</div>
-              <h2 class="hero-title">
-                MINIMALIST <span class="hero-accent">ESSENTIALS</span>
-              </h2>
-              <p class="hero-subtitle">
-                Curated pieces designed for modern living
+    <!-- Our Story Hero Section -->
+    <section class="story-hero-section">
+      <div class="story-hero-image"></div>
+      <div class="story-hero-overlay"></div>
+      <div class="story-hero-content">
+        <div class="story-tag">Est. 2020</div>
+        <h1 class="story-title">Our <span class="hero-accent">Story</span></h1>
+        <p class="story-subtitle">
+          The journey of crafting essentials for modern living
+        </p>
+      </div>
+    </section>
+
+    <!-- Story Content Section -->
+    <section class="story-content-section">
+      <div class="story-container">
+        <div class="story-section">
+          <div class="story-text">
+            <h2 class="section-title">The Beginning</h2>
+            <p>
+              TnsH was born from a simple yet profound idea: to create a brand
+              that embodies minimalist elegance while delivering exceptional
+              quality. Founded in 2020, our journey began with a small
+              collection of carefully curated essentials designed to enhance
+              everyday life.
+            </p>
+            <p>
+              We started with just three employees in a modest studio in
+              Brooklyn, driven by our shared passion for clean design and
+              sustainable practices. Our first collection sold out within days,
+              affirming our belief that there was a demand for thoughtfully
+              designed products that stood the test of time.
+            </p>
+          </div>
+          <div class="story-image image-right">
+            <div class="story-img-container"></div>
+            <div class="story-caption">Our first studio in Brooklyn, 2020</div>
+          </div>
+        </div>
+
+        <div class="story-quote-section">
+          <div class="story-quote">
+            <p>
+              "We don't follow trends. We create timeless designs that speak to
+              the essence of modern living."
+            </p>
+            <div class="quote-attribution">— Founder, TnsH</div>
+          </div>
+        </div>
+
+        <div class="story-section reversed">
+          <div class="story-image image-left">
+            <div class="story-img-container"></div>
+            <div class="story-caption">Our design process</div>
+          </div>
+          <div class="story-text">
+            <h2 class="section-title">Our Philosophy</h2>
+            <p>
+              At TnsH, we believe that less is more. Our design philosophy
+              centers around creating products that are both functional and
+              beautiful, with clean lines and thoughtful details that stand the
+              test of time.
+            </p>
+            <p>
+              We are committed to responsible production methods, working
+              closely with skilled artisans and ethical manufacturers to ensure
+              that our products are made with care and consideration for both
+              people and planet.
+            </p>
+          </div>
+        </div>
+
+        <div class="story-values-section">
+          <h2 class="section-title centered">Our Values</h2>
+          <div class="values-container">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-seedling"></i>
+              </div>
+              <h3 class="value-title">Sustainability</h3>
+              <p class="value-description">
+                We're committed to minimizing our environmental footprint
+                through responsible sourcing and production.
               </p>
-              <div class="hero-buttons">
-                <a href="#" class="hero-button primary">Shop Now</a>
-                <a href="#" class="hero-button secondary">Explore</a>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-gem"></i>
               </div>
+              <h3 class="value-title">Quality</h3>
+              <p class="value-description">
+                We believe in creating products that are built to last, reducing
+                waste and providing better value.
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3 class="value-title">Community</h3>
+              <p class="value-description">
+                We foster meaningful connections with our customers, partners,
+                and the communities we serve.
+              </p>
             </div>
           </div>
         </div>
 
-        <div class="hero-navigation">
-          <div class="hero-dots">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
+        <div class="story-section">
+          <div class="story-text">
+            <h2 class="section-title">Looking Forward</h2>
+            <p>
+              As we continue to grow, our commitment to our core values remains
+              unwavering. We're excited about the future and the opportunity to
+              bring our vision of mindful, modern living to more people around
+              the world.
+            </p>
+            <p>
+              Thank you for being part of our journey. We invite you to explore
+              our collections and join us in embracing the beauty of simplicity.
+            </p>
+            <a href="amazon.html" class="story-button"
+              >Explore Our Collections</a
+            >
+          </div>
+          <div class="story-image image-right">
+            <div class="story-img-container"></div>
+            <div class="story-caption">Our design team at work</div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Trending Products Carousel Section -->
-    <section class="carousel-section">
-      <div class="section-title">
-        <h2>Trending Now</h2>
-      </div>
-      <div class="carousel-container">
-        <button
-          class="carousel-button prev-button"
-          aria-label="Previous products"
-        >
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="carousel-track-container">
-          <div class="carousel-track">
-            <!-- Carousel items will be populated by JS -->
-          </div>
-        </div>
-        <button class="carousel-button next-button" aria-label="Next products">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    </section>
-
-    <div class="main">
-      <div class="section-title">
-        <h2>Featured Products</h2>
-      </div>
-      <div id="products" class="products-grid js-products-grid"></div>
-
-      <!-- Testimonials Section -->
-      <section class="testimonial-section">
-        <div class="section-title">
-          <h2>What Our Customers Say</h2>
-        </div>
-        <div class="testimonial-container">
-          <div class="testimonial-card">
-            <div class="testimonial-quote">
-              "TnsH has completely transformed my shopping experience. The
-              quality of products and the attention to detail are unmatched."
-            </div>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar"></div>
-              <div class="testimonial-info">
-                <div class="testimonial-name">Sarah Johnson</div>
-                <div class="testimonial-location">New York, NY</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-quote">
-              "I've been shopping with TnsH for over a year now and I'm
-              consistently impressed with their customer service and product
-              range."
-            </div>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar"></div>
-              <div class="testimonial-info">
-                <div class="testimonial-name">Michael Rodriguez</div>
-                <div class="testimonial-location">San Francisco, CA</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-quote">
-              "The attention to detail in every order I've placed is amazing.
-              From packaging to product quality, everything is perfect."
-            </div>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar"></div>
-              <div class="testimonial-info">
-                <div class="testimonial-name">Emily Wong</div>
-                <div class="testimonial-location">Chicago, IL</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
 
     <!-- Back to Top Button -->
     <div class="back-to-top-container">
@@ -215,6 +233,7 @@
       </button>
     </div>
 
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-container">
         <div class="footer-section">
@@ -285,9 +304,5 @@
       </div>
     </footer>
   </body>
-  <script type="module" src="scripts/amazon.js"></script>
-  <script src="scripts/modern-hero.js"></script>
-  <script src="scripts/carousel.js"></script>
-  <script src="scripts/quick-shop.js"></script>
   <script src="scripts/back-to-top.js"></script>
 </html>

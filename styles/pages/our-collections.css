@@ -1,0 +1,229 @@
+/* Our Collections Page Styling */
+
+.collections-main {
+  margin-top: 120px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 30px;
+}
+
+.collections-hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.collections-title {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  letter-spacing: -0.02vw;
+}
+
+.collections-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.collection-section {
+  margin-bottom: 100px;
+}
+
+.collection-category {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  letter-spacing: -0.02vw;
+}
+
+.collection-description {
+  font-size: 16px;
+  font-weight: 300;
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.collection-item {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.collection-image-container {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.collection-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.collection-item:hover .collection-image {
+  transform: scale(1.05);
+}
+
+.collection-item-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.collection-item-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.collection-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #222;
+  color: #222;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.collection-button:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Limited Edition Section */
+.limited-edition {
+  background-color: #f9f9f9;
+  padding: 60px;
+  margin: 0 -30px 100px;
+}
+
+.collection-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.collection-feature-image {
+  overflow: hidden;
+}
+
+.feature-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.feature-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.feature-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .collections-title {
+    font-size: 36px;
+  }
+
+  .collection-category {
+    font-size: 28px;
+  }
+
+  .collection-grid {
+    gap: 20px;
+  }
+
+  .collection-image {
+    height: 250px;
+  }
+
+  .limited-edition {
+    padding: 40px;
+  }
+
+  .feature-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .collections-main {
+    margin-top: 100px;
+  }
+
+  .collections-hero {
+    margin-bottom: 60px;
+  }
+
+  .collections-title {
+    font-size: 32px;
+  }
+
+  .collections-subtitle {
+    font-size: 16px;
+  }
+
+  .collection-section {
+    margin-bottom: 70px;
+  }
+
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collection-feature {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .collection-feature-content {
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .collections-main {
+    padding: 0 20px;
+  }
+
+  .collections-title {
+    font-size: 28px;
+  }
+
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-image {
+    height: 300px;
+  }
+
+  .limited-edition {
+    padding: 30px 20px;
+    margin: 0 -20px 70px;
+  }
+}

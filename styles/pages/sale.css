@@ -1,0 +1,356 @@
+/* Sale Page Styling */
+
+.sale-main {
+  margin-top: 120px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 30px;
+}
+
+/* Hero Section */
+.sale-hero {
+  text-align: center;
+  padding: 60px 0;
+  margin-bottom: 60px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.sale-title {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  letter-spacing: -0.02vw;
+  color: #222;
+}
+
+.sale-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+/* Countdown Timer */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.countdown-value {
+  font-size: 28px;
+  font-weight: 500;
+  color: #222;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.countdown-label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Category Tabs */
+.sale-categories {
+  margin-bottom: 50px;
+}
+
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+}
+
+.category-tab {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.category-tab::after {
+  content: "";
+  position: absolute;
+  bottom: -21px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #222;
+  transition: width 0.3s ease;
+}
+
+.category-tab:hover {
+  color: #222;
+}
+
+.category-tab.active {
+  color: #222;
+  font-weight: 500;
+}
+
+.category-tab.active::after {
+  width: 100%;
+}
+
+/* Product Grid */
+.sale-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.sale-product {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #222;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.product-image-container {
+  position: relative;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.hover-actions {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px 0;
+  text-align: center;
+  transition: bottom 0.3s ease;
+}
+
+.product-image-container:hover .hover-actions {
+  bottom: 0;
+}
+
+.product-image-container:hover .product-image {
+  transform: scale(1.05);
+}
+
+.quick-add {
+  display: inline-block;
+  background-color: #222;
+  color: white;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.quick-add:hover {
+  background-color: #444;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.product-price-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+}
+
+.discounted-price {
+  color: #222;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Promo Banner */
+.promo-banner {
+  background-color: #222;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+  margin: 40px 0 80px;
+}
+
+.promo-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.promo-title {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-family: "Playfair Display", serif;
+}
+
+.promo-text {
+  font-size: 18px;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+.promo-text strong {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.promo-button {
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 12px 30px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.promo-button:hover {
+  background-color: white;
+  color: #222;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .sale-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-image {
+    height: 300px;
+  }
+
+  .sale-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sale-main {
+    margin-top: 100px;
+    padding: 0 20px;
+  }
+
+  .sale-hero {
+    padding: 40px 0;
+    margin-bottom: 40px;
+  }
+
+  .sale-title {
+    font-size: 32px;
+  }
+
+  .sale-subtitle {
+    font-size: 16px;
+  }
+
+  .category-tabs {
+    flex-wrap: wrap;
+  }
+
+  .category-tab {
+    margin: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .countdown-container {
+    gap: 10px;
+  }
+
+  .countdown-value {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .countdown-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sale-title {
+    font-size: 28px;
+  }
+
+  .sale-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image {
+    height: 280px;
+  }
+
+  .countdown-value {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .promo-banner {
+    padding: 40px 20px;
+  }
+
+  .promo-title {
+    font-size: 26px;
+  }
+
+  .promo-text {
+    font-size: 16px;
+  }
+}

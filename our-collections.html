@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Our Collections - TnsH</title>
+
+    <!-- This code is needed for responsive design to work. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Load fonts from Google Fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Load Didot font as a web font -->
+    <style>
+      @font-face {
+        font-family: "Didot";
+        src: url("https://fonts.cdnfonts.com/css/didot");
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <!-- Here are the CSS files for this page. -->
+    <link rel="stylesheet" href="styles/shared/general.css" />
+    <link rel="stylesheet" href="styles/shared/header.css" />
+    <link rel="stylesheet" href="styles/shared/components.css" />
+    <link rel="stylesheet" href="styles/shared/modern-ui.css" />
+    <link rel="stylesheet" href="styles/shared/hero.css" />
+    <link rel="stylesheet" href="styles/shared/footer.css" />
+    <link rel="stylesheet" href="styles/pages/our-collections.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="amazon-header">
+      <div class="amazon-header-left-section">
+        <div class="header-nav-links">
+          <ul class="header-links">
+            <li>
+              <a href="our-story.html" class="header-link-text">Our Story</a>
+            </li>
+            <li>
+              <a href="sale.html" class="header-link-text">Sale</a>
+            </li>
+            <li>
+              <a href="our-collections.html" class="header-link-text"
+                >Collections</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="amazon-header-center-section">
+        <a href="amazon.html" class="header-link logo-link">
+          <h1 class="brand-logo">TnsH</h1>
+        </a>
+      </div>
+
+      <div class="amazon-header-right-section">
+        <div class="search-container">
+          <input
+            class="search-bar"
+            type="text"
+            placeholder="Search"
+            aria-label="Search products"
+          />
+          <button class="search-button" aria-label="Search">
+            <i class="fas fa-search search-icon"></i>
+          </button>
+        </div>
+
+        <a href="orders.html" class="orders-link header-link">
+          <i class="fas fa-box"></i>
+        </a>
+
+        <a href="checkout.html" class="cart-link header-link">
+          <i class="fas fa-shopping-bag"></i>
+          <div class="cart-quantity js-cart-quantity">0</div>
+        </a>
+      </div>
+    </div>
+
+    <main class="collections-main">
+      <div class="collections-hero">
+        <h1 class="collections-title">Our Collections</h1>
+        <p class="collections-subtitle">
+          Thoughtfully curated pieces for modern living
+        </p>
+      </div>
+
+      <section class="collection-section">
+        <h2 class="collection-category">Signature Collection</h2>
+        <p class="collection-description">
+          Our most iconic and enduring designs, crafted with exceptional
+          attention to detail and quality.
+        </p>
+
+        <div class="collection-grid">
+          <div class="collection-item">
+            <div class="collection-image-container">
+              <img
+                src="images/products/luxury-tower-set-6-piece.jpg"
+                alt="Luxury Towel Set"
+                class="collection-image"
+              />
+            </div>
+            <h3 class="collection-item-title">Luxury Essentials</h3>
+            <p class="collection-item-description">
+              Everyday luxury for your home
+            </p>
+            <a href="amazon.html" class="collection-button">Shop Now</a>
+          </div>
+
+          <div class="collection-item">
+            <div class="collection-image-container">
+              <img
+                src="images/products/non-stick-cooking-set-15-pieces.webp"
+                alt="Cooking Set"
+                class="collection-image"
+              />
+            </div>
+            <h3 class="collection-item-title">Kitchen Collection</h3>
+            <p class="collection-item-description">
+              Modern essentials for the home chef
+            </p>
+            <a href="amazon.html" class="collection-button">Shop Now</a>
+          </div>
+
+          <div class="collection-item">
+            <div class="collection-image-container">
+              <img
+                src="images/products/men-cozy-fleece-zip-up-hoodie-red.jpg"
+                alt="Men's Hoodie"
+                class="collection-image"
+              />
+            </div>
+            <h3 class="collection-item-title">Comfort Wear</h3>
+            <p class="collection-item-description">
+              Relaxed style for everyday
+            </p>
+            <a href="amazon.html" class="collection-button">Shop Now</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="collection-section">
+        <h2 class="collection-category">Seasonal Highlights</h2>
+        <p class="collection-description">
+          Our latest pieces, designed to complement the current season with
+          style and purpose.
+        </p>
+
+        <div class="collection-grid">
+          <div class="collection-item">
+            <div class="collection-image-container">
+              <img
+                src="images/products/duvet-cover-set-blue-twin.jpg"
+                alt="Duvet Cover"
+                class="collection-image"
+              />
+            </div>
+            <h3 class="collection-item-title">Spring Bedding</h3>
+            <p class="collection-item-description">Refresh your space</p>
+            <a href="amazon.html" class="collection-button">Shop Now</a>
+          </div>
+
+          <div class="collection-item">
+            <div class="collection-image-container">
+              <img
+                src="images/products/round-sunglasses-black.jpg"
+                alt="Sunglasses"
+                class="collection-image"
+              />
+            </div>
+            <h3 class="collection-item-title">Summer Accessories</h3>
+            <p class="collection-item-description">
+              Essential pieces for sunny days
+            </p>
+            <a href="amazon.html" class="collection-button">Shop Now</a>
+          </div>
+
+          <div class="collection-item">
+            <div class="collection-image-container">
+              <img
+                src="images/products/knit-athletic-sneakers-gray.jpg"
+                alt="Sneakers"
+                class="collection-image"
+              />
+            </div>
+            <h3 class="collection-item-title">Active Collection</h3>
+            <p class="collection-item-description">Performance meets style</p>
+            <a href="amazon.html" class="collection-button">Shop Now</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="collection-section limited-edition">
+        <h2 class="collection-category">Limited Editions</h2>
+        <p class="collection-description">
+          Exclusive designs available for a limited time only. Each piece tells
+          a unique story.
+        </p>
+
+        <div class="collection-feature">
+          <div class="collection-feature-image">
+            <img
+              src="images/products/double-elongated-twist-french-wire-earrings.webp"
+              alt="Earrings"
+              class="feature-image"
+            />
+          </div>
+          <div class="collection-feature-content">
+            <h3 class="feature-title">The Artisan Series</h3>
+            <p class="feature-description">
+              Celebrating craftsmanship and unique design, our Artisan Series
+              features one-of-a-kind pieces crafted by skilled artisans from
+              around the world. Each item reflects traditional techniques with
+              modern sensibilities.
+            </p>
+            <a href="amazon.html" class="collection-button"
+              >Explore the Collection</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top-container">
+      <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3 class="footer-title">Shop</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">New Arrivals</a></li>
+            <li>
+              <a href="our-collections.html" class="footer-link">Collections</a>
+            </li>
+            <li><a href="#" class="footer-link">Sale</a></li>
+            <li><a href="#" class="footer-link">Bestsellers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">Help</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Customer Service</a></li>
+            <li><a href="#" class="footer-link">Shipping</a></li>
+            <li><a href="#" class="footer-link">Returns</a></li>
+            <li><a href="#" class="footer-link">Size Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">About</h3>
+          <ul class="footer-links">
+            <li><a href="our-story.html" class="footer-link">Our Story</a></li>
+            <li>
+              <a href="sustainability.html" class="footer-link"
+                >Sustainability</a
+              >
+            </li>
+            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3 class="footer-title">Follow Us</h3>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Pinterest"
+              ><i class="fab fa-pinterest-p"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
+          <div class="newsletter">
+            <h4 class="newsletter-title">Subscribe to our newsletter</h4>
+            <div class="newsletter-form">
+              <input
+                type="email"
+                placeholder="Your email"
+                aria-label="Email for newsletter"
+                class="newsletter-input"
+              />
+              <button aria-label="Subscribe" class="newsletter-button">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2023 TnsH. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="#" class="footer-bottom-link">Privacy Policy</a></li>
+          <li><a href="#" class="footer-bottom-link">Terms of Service</a></li>
+          <li><a href="#" class="footer-bottom-link">Accessibility</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="scripts/back-to-top.js"></script>
+  </body>
+</html>

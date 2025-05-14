@@ -15,9 +15,12 @@
 }
 
 .page-title {
-  font-weight: 700;
-  font-size: 22px;
-  margin-bottom: 18px;
+  font-weight: 200;
+  font-size: 28px;
+  margin-bottom: 40px;
+  letter-spacing: -0.02vw;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .checkout-grid {
@@ -25,7 +28,7 @@
   /* Here, 1fr means the first column will take
      up the remaining space in the grid. */
   grid-template-columns: 1fr 350px;
-  column-gap: 12px;
+  column-gap: 30px;
 
   /* Use align-items: start; to prevent the elements
      in the grid from stretching vertically. */
@@ -44,17 +47,18 @@
 
 .cart-item-container,
 .payment-summary {
-  border: 1px solid rgb(222, 222, 222);
-  border-radius: 4px;
-  padding: 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  padding: 25px;
+  background-color: #ffffff;
 }
 
 .cart-item-container {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .payment-summary {
-  padding-bottom: 5px;
+  padding-bottom: 15px;
 }
 
 @media (max-width: 1000px) {
@@ -69,11 +73,12 @@
 }
 
 .delivery-date {
-  color: rgb(0, 118, 0);
-  font-weight: 700;
-  font-size: 19px;
-  margin-top: 5px;
-  margin-bottom: 22px;
+  color: #222;
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  letter-spacing: -0.02vw;
 }
 
 .cart-item-details-grid {
@@ -81,8 +86,8 @@
   /* 100px 1fr 1fr; means the 2nd and 3rd column will
      take up half the remaining space in the grid
      (they will divide up the remaining space evenly). */
-  grid-template-columns: 100px 1fr 1fr;
-  column-gap: 25px;
+  grid-template-columns: 120px 1fr 1fr;
+  column-gap: 30px;
 }
 
 @media (max-width: 1000px) {
@@ -110,8 +115,8 @@
 }
 
 .product-price {
-  color: rgb(177, 39, 4);
-  font-weight: 700;
+  color: #555;
+  font-weight: 500;
   margin-bottom: 5px;
 }
 
@@ -152,8 +157,8 @@
 }
 
 .delivery-option-date {
-  color: rgb(0, 118, 0);
-  font-weight: 500;
+  color: #555;
+  font-weight: 400;
   margin-bottom: 3px;
 }
 
@@ -192,8 +197,8 @@
 }
 
 .total-row {
-  color: rgb(177, 39, 4);
-  font-weight: 700;
+  color: #222;
+  font-weight: 500;
   font-size: 18px;
 
   border-top: 1px solid rgb(222, 222, 222);
@@ -208,4 +213,31 @@
 
   margin-top: 11px;
   margin-bottom: 15px;
+}
+
+.amazon-header-right-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.secure-checkout {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 300;
+  color: #555;
+  letter-spacing: -0.02vw;
+}
+
+.secure-checkout i {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #222;
+}
+
+/* Margin for footer spacing */
+.main {
+  margin-bottom: 60px;
 }

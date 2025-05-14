@@ -1,0 +1,361 @@
+.amazon-header {
+  background-color: #ffffff;
+  color: #222222;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-bottom: 1px solid #e0e0e0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 1000;
+}
+
+.amazon-header-left-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-links {
+  display: flex;
+  margin-left: 15px;
+}
+
+.header-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.header-links li {
+  margin-right: 20px;
+}
+
+.header-link-text {
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.header-link-text:hover {
+  color: #222;
+}
+
+.amazon-header-center-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none; /* Allows clicks to pass through to elements below */
+}
+
+.amazon-header-center-section .logo-link {
+  pointer-events: auto; /* Restore pointer events for the logo link */
+}
+
+@media (max-width: 800px) {
+  .amazon-header-left-section {
+    flex: 0.5;
+  }
+
+  .header-links {
+    flex-direction: row;
+  }
+
+  .header-links li {
+    margin-right: 12px;
+  }
+
+  .header-link-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .amazon-header-left-section,
+  .amazon-header-right-section {
+    flex: 1;
+  }
+
+  .amazon-header-right-section {
+    justify-content: flex-end;
+  }
+
+  .header-nav-links {
+    justify-content: flex-start;
+  }
+
+  .search-container {
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  .brand-logo {
+    font-size: 24px;
+  }
+
+  .search-bar {
+    width: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-links li {
+    margin-right: 12px;
+  }
+
+  .header-link-text {
+    font-size: 11px;
+  }
+
+  .amazon-header-left-section {
+    margin-left: -10px;
+  }
+
+  .brand-logo {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .amazon-header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .brand-logo {
+    font-size: 20px;
+  }
+
+  .search-bar {
+    width: 100px;
+    font-size: 12px;
+  }
+
+  .search-container {
+    margin-right: 10px;
+  }
+
+  .orders-link {
+    margin-right: 15px;
+  }
+
+  .header-links li {
+    margin-right: 8px;
+  }
+
+  .header-link-text {
+    font-size: 10px;
+  }
+}
+
+.header-link {
+  display: inline-block;
+  padding: 6px 0;
+  margin: 0 15px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.logo-link {
+  text-transform: none;
+}
+
+/* Apply hover effects to all header links except the logo */
+.header-link:not(.logo-link):hover {
+  opacity: 0.7;
+}
+
+.header-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #222222;
+  transition: width 0.3s ease;
+}
+
+/* Remove hover animation for logo */
+.logo-link::after {
+  display: none;
+}
+
+.header-link:not(.logo-link):hover::after {
+  width: 100%;
+}
+
+.brand-logo {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: -0.1em;
+  color: #222222;
+  position: relative;
+  font-family: var(--heading-font);
+  text-transform: none;
+}
+
+/* Removed hover animations */
+.brand-logo::after {
+  content: "";
+  position: absolute;
+  height: 0.1em;
+  width: 50%;
+  background-color: #222222;
+  bottom: 2px;
+  left: 0.3em;
+}
+
+.amazon-logo {
+  display: none;
+}
+
+.amazon-mobile-logo {
+  display: none;
+}
+
+.amazon-header-right-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  position: relative;
+  z-index: 1001; /* Ensure elements are above the absolute center section */
+}
+
+.search-bar {
+  width: 200px;
+  font-size: 14px;
+  font-family: var(--secondary-font);
+  font-weight: 200; /* Extra light weight */
+  height: 28px;
+  border: none;
+  border-bottom: 0.8px solid #222;
+  background: transparent;
+  transition: all 0.3s ease;
+  letter-spacing: -0.02vw;
+}
+
+.search-bar::placeholder {
+  color: #999;
+  font-weight: 200;
+  opacity: 0.8;
+}
+
+.search-bar:focus {
+  border-bottom: 1px solid #222;
+  outline: none;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  opacity: 0.7;
+}
+
+.search-icon {
+  font-size: 15px;
+  color: #222222;
+  opacity: 0.8;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.orders-link {
+  color: #222222;
+  margin-right: 30px;
+}
+
+.returns-text {
+  display: none;
+}
+
+.orders-text {
+  display: none;
+  font-size: 12px;
+  font-weight: 200;
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  letter-spacing: -0.02vw;
+}
+
+.cart-link {
+  color: #222222;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cart-icon {
+  font-size: 18px;
+  color: #222222;
+  opacity: 0.8;
+}
+
+.orders-icon {
+  font-size: 16px;
+  color: #222222;
+  opacity: 0.8;
+}
+
+.cart-text {
+  display: none;
+  margin-left: 6px;
+  font-size: 12px;
+  font-weight: 200;
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  letter-spacing: -0.02vw;
+}
+
+.cart-quantity {
+  color: #ffffff;
+  background-color: #222222;
+  font-size: 10px;
+  font-weight: 400;
+  font-family: var(--secondary-font);
+
+  position: absolute;
+  top: -8px;
+  left: 14px;
+
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
