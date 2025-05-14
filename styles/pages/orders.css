@@ -218,3 +218,13 @@
     padding: 12px;
   }
 }
+
+@media (max-width: 1240px) {
+  .track-package-button {
+    display: none;
+  }
+
+  .product-actions {
+    display: none;
+  }
+}

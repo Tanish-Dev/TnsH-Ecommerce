@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Sample trending products - in a real app, these would come from your products data
   const trendingProducts = [
     {
-      image: "images/products/knit-athletic-sneakers-gray.jpg",
+      image: "images/vienna-austria-june-14-2017-600nw-1264075333.webp",
       name: "Knit Athletic Sneakers - Gray",
       price: "45.99",
       rating: 4.5,

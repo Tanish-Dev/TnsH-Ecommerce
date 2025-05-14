@@ -40,6 +40,10 @@
     <!-- Header Section -->
     <div class="amazon-header">
       <div class="amazon-header-left-section">
+        <button class="mobile-menu-button" aria-label="Menu">
+          <span class="menu-icon-bar"></span>
+          <span class="menu-icon-bar"></span>
+        </button>
         <div class="header-nav-links">
           <ul class="header-links">
             <li>
@@ -78,12 +82,71 @@
           <i class="fas fa-box"></i>
         </a>
 
-        <a href="checkout.html" class="cart-link header-link">
+        <a
+          href="checkout.html"
+          class="cart-link header-link"
+          aria-label="View cart"
+        >
           <i class="fas fa-shopping-bag"></i>
           <div class="cart-quantity js-cart-quantity">0</div>
         </a>
       </div>
     </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-header">
+        <h2 class="mobile-menu-title">Menu</h2>
+        <button class="mobile-close-button" aria-label="Close menu">
+          <span class="close-icon-bar"></span>
+          <span class="close-icon-bar"></span>
+        </button>
+      </div>
+      <div class="mobile-search">
+        <input
+          type="text"
+          class="mobile-search-input"
+          placeholder="Search"
+          aria-label="Search products"
+        />
+        <i class="fas fa-search mobile-search-icon"></i>
+      </div>
+      <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item">
+            <a href="our-story.html" class="mobile-nav-link">Our Story</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="our-collections.html" class="mobile-nav-link"
+              >Collections</a
+            >
+          </li>
+          <li class="mobile-nav-item">
+            <a href="sale.html" class="mobile-nav-link">Sale</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="orders.html" class="mobile-nav-link">My Orders</a>
+          </li>
+        </ul>
+        <div class="mobile-menu-footer">
+          <div class="mobile-social-links">
+            <a href="#" class="mobile-social-link" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="mobile-social-link" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="mobile-social-link" aria-label="Pinterest"
+              ><i class="fab fa-pinterest-p"></i
+            ></a>
+            <a href="#" class="mobile-social-link" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="mobile-menu-overlay"></div>
 
     <main class="sale-main">
       <div class="sale-hero">
