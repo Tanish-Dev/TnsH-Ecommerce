@@ -25,6 +25,22 @@ export function showProductDetail(productId) {
     document.body.appendChild(productDetailOverlay);
   }
 
+  // Determine if product has any special badges
+  const isNew = product.isNew;
+  const isBestseller =
+    product.keywords && product.keywords.includes("bestseller");
+  const isSale = product.priceCents < product.originalPriceCents;
+
+  // Calculate savings percentage if on sale
+  let savingsPercent = 0;
+  if (isSale && product.originalPriceCents) {
+    savingsPercent = Math.round(
+      ((product.originalPriceCents - product.priceCents) /
+        product.originalPriceCents) *
+        100
+    );
+  }
+
   // Generate the HTML for the product detail
   const productHTML = `
     <div class="product-detail-container">
@@ -42,6 +58,18 @@ export function showProductDetail(productId) {
         </div>
         
         <div class="product-detail-right">
+          <div class="product-detail-breadcrumb">
+            Home / ${product.type || "Products"} / ${product.name}
+          </div>
+          
+          ${isNew ? '<span class="product-detail-badge new">New</span>' : ""}
+          ${
+            isBestseller
+              ? '<span class="product-detail-badge bestseller">Bestseller</span>'
+              : ""
+          }
+          ${isSale ? '<span class="product-detail-badge sale">Sale</span>' : ""}
+          
           <h1 class="product-detail-name">${product.name}</h1>
           
           <div class="product-detail-rating">
@@ -55,9 +83,26 @@ export function showProductDetail(productId) {
             } ratings</span>
           </div>
           
-          <div class="product-detail-price">$${formatcurrency(
-            product.priceCents
-          )}</div>
+          <div class="product-detail-price-container">
+            <span class="product-detail-price">$${formatcurrency(
+              product.priceCents
+            )}</span>
+            ${
+              product.originalPriceCents
+                ? `<span class="product-detail-original-price">$${formatcurrency(
+                    product.originalPriceCents
+                  )}</span>`
+                : ""
+            }
+          </div>
+          
+          ${
+            savingsPercent > 0
+              ? `<div class="product-detail-savings">You save: ${savingsPercent}% ($${formatcurrency(
+                  product.originalPriceCents - product.priceCents
+                )})</div>`
+              : ""
+          }
           
           <div class="product-detail-description">
             ${generateProductDescription(product)}
@@ -80,28 +125,21 @@ export function showProductDetail(productId) {
           
           <div class="product-detail-actions">
             <div class="product-detail-quantity">
-              <label for="product-quantity">Quantity:</label>
-              <select id="product-quantity" class="product-quantity-select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
+              <div class="product-detail-quantity-label">Quantity:</div>
+              <div class="product-detail-quantity-selector">
+                <button class="product-detail-quantity-btn js-quantity-decrease" aria-label="Decrease quantity">-</button>
+                <input type="text" value="1" class="product-detail-quantity-input js-product-detail-quantity" readonly aria-label="Product quantity">
+                <button class="product-detail-quantity-btn js-quantity-increase" aria-label="Increase quantity">+</button>
+              </div>
             </div>
             
-            <div class="product-detail-buttons">
+            <div class="product-detail-cta-buttons">
               <button class="product-detail-add-to-cart js-product-detail-add-to-cart" 
                 data-product-id="${product.id}">
-                Add to Cart
+                <i class="fas fa-shopping-cart"></i> Add to Cart
               </button>
-              <button class="product-detail-buy-now">
-                Buy Now
+              <button class="product-detail-wishlist js-add-to-wishlist" aria-label="Add to wishlist">
+                <i class="far fa-heart"></i>
               </button>
             </div>
           </div>
@@ -165,13 +203,34 @@ function setupEventListeners(overlay, product) {
     });
   }
 
+  // Quantity handlers
+  const quantityInput = overlay.querySelector(".js-product-detail-quantity");
+  const decreaseBtn = overlay.querySelector(".js-quantity-decrease");
+  const increaseBtn = overlay.querySelector(".js-quantity-increase");
+
+  if (decreaseBtn && increaseBtn && quantityInput) {
+    decreaseBtn.addEventListener("click", () => {
+      const currentVal = parseInt(quantityInput.value, 10) || 1;
+      if (currentVal > 1) {
+        quantityInput.value = currentVal - 1;
+      }
+    });
+
+    increaseBtn.addEventListener("click", () => {
+      const currentVal = parseInt(quantityInput.value, 10) || 1;
+      if (currentVal < 10) {
+        quantityInput.value = currentVal + 1;
+      }
+    });
+  }
+
   // Add to cart button
   const addToCartButton = overlay.querySelector(
     ".js-product-detail-add-to-cart"
   );
   addToCartButton.addEventListener("click", () => {
     const quantity = parseInt(
-      overlay.querySelector(".product-quantity-select").value,
+      overlay.querySelector(".js-product-detail-quantity").value,
       10
     );
     const productId = addToCartButton.dataset.productId;
@@ -184,6 +243,19 @@ function setupEventListeners(overlay, product) {
     updateCartCount();
     showAddedMessage(overlay);
   });
+
+  // Wishlist button
+  const wishlistButton = overlay.querySelector(".js-add-to-wishlist");
+  if (wishlistButton) {
+    wishlistButton.addEventListener("click", () => {
+      wishlistButton.classList.toggle("active");
+      if (wishlistButton.classList.contains("active")) {
+        wishlistButton.querySelector("i").classList.replace("far", "fas");
+      } else {
+        wishlistButton.querySelector("i").classList.replace("fas", "far");
+      }
+    });
+  }
 }
 
 /**

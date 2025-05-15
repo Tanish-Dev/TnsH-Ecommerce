@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="styles/shared/modern-ui.css" />
     <link rel="stylesheet" href="styles/shared/hero.css" />
     <link rel="stylesheet" href="styles/shared/product-detail.css" />
+    <link rel="stylesheet" href="styles/shared/enhanced-product-detail.css" />
     <link rel="stylesheet" href="styles/shared/footer.css" />
     <link rel="stylesheet" href="styles/pages/our-collections.css" />
     <link
@@ -257,8 +258,72 @@
           Browse our complete collection of premium quality products
         </p>
 
-        <div class="all-products-grid js-all-products-grid">
-          <!-- Products will be loaded here via JavaScript -->
+        <div class="products-filter-bar">
+          <div class="filter-options">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="clothing">
+              Clothing
+            </button>
+            <button class="filter-button" data-filter="home">Home</button>
+            <button class="filter-button" data-filter="accessories">
+              Accessories
+            </button>
+          </div>
+
+          <div class="sort-options">
+            <select
+              class="sort-select js-sort-select"
+              aria-label="Sort products by"
+            >
+              <option value="default">Default Sorting</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="products-container">
+          <div class="filter-sidebar">
+            <div class="filter-section">
+              <h3 class="filter-heading">Price Range</h3>
+              <div class="price-range">
+                <input type="text" placeholder="Min" class="js-price-min" />
+                <span>-</span>
+                <input type="text" placeholder="Max" class="js-price-max" />
+              </div>
+            </div>
+
+            <div class="filter-section">
+              <h3 class="filter-heading">Categories</h3>
+              <ul class="filter-options-list">
+                <li class="filter-option">
+                  <label class="filter-checkbox">
+                    <input type="checkbox" value="clothing" /> Clothing
+                  </label>
+                </li>
+                <li class="filter-option">
+                  <label class="filter-checkbox">
+                    <input type="checkbox" value="home" /> Home
+                  </label>
+                </li>
+                <li class="filter-option">
+                  <label class="filter-checkbox">
+                    <input type="checkbox" value="kitchen" /> Kitchen
+                  </label>
+                </li>
+                <li class="filter-option">
+                  <label class="filter-checkbox">
+                    <input type="checkbox" value="accessories" /> Accessories
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="all-products-grid js-all-products-grid">
+            <!-- Products will be loaded here via JavaScript -->
+          </div>
         </div>
       </section>
     </main>
