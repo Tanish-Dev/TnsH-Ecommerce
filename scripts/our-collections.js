@@ -47,15 +47,12 @@ function renderAllProducts() {
 
         <div class="collection-product-spacer"></div>
 
-        <div class="collection-added-to-cart js-added-to-cart${product.id}">
-          <img src="images/icons/checkmark.png" />
-          Added
+        <div class="collection-view-details-container">
+          <button class="collection-view-details-button js-view-details" 
+            data-product-id="${product.id}">
+            View Details
+          </button>
         </div>
-
-        <button class="collection-add-to-cart-button button-secondary js-add-to-cart" 
-          data-product-id="${product.id}">
-          Add to Cart
-        </button>
       </div>
     `;
   });
@@ -63,30 +60,15 @@ function renderAllProducts() {
   productsContainer.innerHTML = productsHTML;
 }
 
-// Initialize event listeners for Add to Cart buttons and product details
+// Initialize event listeners for View Details buttons and product details
 function initializeEventListeners() {
-  document.querySelectorAll(".js-add-to-cart").forEach((button) => {
+  document.querySelectorAll(".js-view-details").forEach((button) => {
     button.addEventListener("click", (event) => {
-      // Stop propagation to prevent opening product detail when clicking the button
+      // Stop propagation to prevent duplicate triggers
       event.stopPropagation();
 
       const productId = button.dataset.productId;
-
-      // Show the "Added" message
-      document
-        .querySelector(`.js-added-to-cart${productId}`)
-        .classList.add("added");
-
-      // Hide the message after 2 seconds
-      setTimeout(() => {
-        document
-          .querySelector(`.js-added-to-cart${productId}`)
-          .classList.remove("added");
-      }, 2000);
-
-      // Add to cart
-      addtocart(productId);
-      updateCartCount();
+      showProductDetail(productId);
     });
   });
 

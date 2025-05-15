@@ -54,14 +54,11 @@ featuredProducts.forEach((product) => {
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart js-added-to-cart${product.id}">
-            <img src="images/icons/checkmark.png" />
-            Added
+          <div class="view-details-container">
+            <button class="view-details-button js-view-details" data-product-id="${
+              product.id
+            }">View Details</button>
           </div>
-
-          <button class="add-to-cart-button button-secondary js-add-to-cart" data-product-id="${
-            product.id
-          }">Add to Cart</button>
         </div>`;
 });
 
@@ -75,22 +72,13 @@ function updateCartCount() {
   document.querySelector(".js-cart-count").innerHTML = cartCount;
 }
 
-document.querySelectorAll(".js-add-to-cart").forEach((button) => {
+document.querySelectorAll(".js-view-details").forEach((button) => {
   button.addEventListener("click", (event) => {
-    // Stop event propagation to prevent opening product detail when clicking the button
+    // Stop event propagation to prevent duplicate triggers
     event.stopPropagation();
 
-    document
-      .querySelector(`.js-added-to-cart${button.dataset.productId}`)
-      .classList.add("added");
-    setTimeout(() => {
-      document
-        .querySelector(`.js-added-to-cart${button.dataset.productId}`)
-        .classList.remove("added");
-    }, 2000);
-    const productsId = button.dataset.productId;
-    addtocart(productsId);
-    updateCartCount();
+    const productId = button.dataset.productId;
+    showProductDetail(productId);
   });
 });
 
