@@ -2,9 +2,12 @@ import { cart, addtocart } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatcurrency } from "./utils/money.js";
 
+// Limit the featured products to the first 8 to reduce scrolling
+const featuredProducts = products.slice(0, 8);
+
 let productsHTMl = "";
 
-products.forEach((product) => {
+featuredProducts.forEach((product) => {
   productsHTMl += `<div class="product-container">
           <div class="product-image-container">
             <img
