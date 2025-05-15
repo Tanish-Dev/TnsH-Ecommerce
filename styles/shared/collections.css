@@ -184,6 +184,11 @@
 .new-arrivals-section {
   padding: 70px 20px;
 }
+.new-arrivals-section1 {
+  padding: 70px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .new-arrivals-section .section-title {
   text-align: center;
@@ -213,8 +218,15 @@
 
 .new-arrivals-container {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 40px;
+  gap: 10px;
+}
+.new-arrivals-container1 {
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 40px;
+  gap: 10px;
 }
 
 .new-arrival-item {
@@ -227,6 +239,8 @@
 }
 
 .new-arrival-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .new-arrival-item::after {
@@ -245,7 +259,7 @@
 }
 
 .new-arrival-image-container {
-  height: 420px;
+  height: 38vw;
   overflow: hidden;
   position: relative;
 }
@@ -277,9 +291,10 @@
 }
 
 .new-arrival-price {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: 0.9rem;
+  color: #666;
   margin-bottom: 15px;
+  font-style: italic;
 }
 
 .new-arrival-tag {
