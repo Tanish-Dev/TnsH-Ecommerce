@@ -146,20 +146,23 @@
 }
 
 .carousel-image-container {
-  height: 380px;
+  height: 400px;
   overflow: hidden;
   margin-bottom: 15px;
+  background-color: #f9f9f9;
+  position: relative;
 }
 
 .carousel-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.7s ease;
+  filter: brightness(1.02);
 }
 
 .carousel-product:hover .carousel-image {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .carousel-product-name {

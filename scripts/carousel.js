@@ -1,54 +1,54 @@
 // Trending Products Carousel Functionality
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Sample trending products - in a real app, these would come from your products data
+  // Sample trending products curated for TnsH aesthetic
   const trendingProducts = [
     {
-      image: "images/products/knit-athletic-sneakers-gray.jpg",
-      name: "Knit Athletic Sneakers - Gray",
+      image: "images/products/women-stretch-popover-hoodie-black.jpg",
+      name: "Minimalist Popover Hoodie",
       price: "45.99",
       rating: 4.5,
     },
     {
-      image: "images/products/round-sunglasses-black.jpg",
-      name: "Round Sunglasses",
-      price: "15.99",
+      image: "images/products/men-navigator-sunglasses-brown.jpg",
+      name: "Premium Navigator Sunglasses",
+      price: "32.99",
       rating: 4.7,
     },
     {
-      image: "images/products/men-cozy-fleece-zip-up-hoodie-red.jpg",
-      name: "Men Cozy Fleece Zip-Up Hoodie",
-      price: "35.99",
+      image: "images/products/women-chiffon-beachwear-coverup-black.jpg",
+      name: "Chiffon Coverup Dress",
+      price: "39.90",
       rating: 4.8,
     },
     {
-      image: "images/products/vanity-mirror-silver.jpg",
-      name: "Vanity Mirror",
-      price: "22.99",
+      image: "images/products/women-beach-sandals.jpg",
+      name: "Handcrafted Beach Sandals",
+      price: "32.90",
       rating: 4.4,
     },
     {
-      image: "images/products/backpack.jpg",
-      name: "Backpack",
-      price: "49.99",
+      image: "images/products/men-chino-pants-beige.jpg",
+      name: "Classic Tailored Chinos",
+      price: "49.90",
       rating: 4.9,
     },
     {
-      image: "images/products/straw-sunhat.webp",
-      name: "Straw Sunhat",
-      price: "19.99",
+      image: "images/products/knit-athletic-sneakers-gray.jpg",
+      name: "Modern Knit Sneakers",
+      price: "55.90",
       rating: 4.3,
     },
     {
-      image: "images/products/sky-flower-stud-earrings.webp",
-      name: "Sky Flower Stud Earrings",
-      price: "24.99",
+      image: "images/products/double-elongated-twist-french-wire-earrings.webp",
+      name: "Twist French Earrings",
+      price: "17.90",
       rating: 4.6,
     },
     {
-      image: "images/products/bathroom-rug.jpg",
-      name: "Bathroom Rug",
-      price: "18.99",
+      image: "images/products/luxury-tower-set-6-piece.jpg",
+      name: "Premium Towel Set",
+      price: "35.90",
       rating: 4.2,
     },
   ];
