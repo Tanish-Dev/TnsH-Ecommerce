@@ -124,14 +124,14 @@
 .view-details-container {
   margin-bottom: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
-  padding: 0 10px;
+  padding-left: 10px;
 }
 
 .view-details-button {
-  width: 70%;
-  padding: 12px 0;
+  width: auto;
+  padding: 12px 20px;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
