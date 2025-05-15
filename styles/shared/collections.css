@@ -323,12 +323,10 @@
   border: 1px solid #222;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-weight: 400;
 }
 
 .new-arrival-button:hover {
-  background-color: #222;
-  color: #fff;
+  background-color: #f1f0f0;
 }
 
 /* Media Queries */
