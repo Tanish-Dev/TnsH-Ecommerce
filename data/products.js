@@ -72,12 +72,13 @@ const product1 = new Product({
 });
 console.log(product1);
 
+// Featured products using premium high-quality lifestyle imagery
 export const products = [
   {
     id: "02e3a47e-dd68-467e-9f71-8bf6f723fdae",
     image:
-      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80",
-    name: "Fine Cotton Button-Down Shirt - Crisp White",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    name: "Premium Woven Cotton Shirt - Signature Series",
     rating: {
       stars: 4.5,
       count: 363,
@@ -90,8 +91,8 @@ export const products = [
   {
     id: "8a53b080-6d40-4a65-ab26-b24ecf700bce",
     image:
-      "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
-    name: "Leather Watch with Minimalist Dial - Timeless Collection",
+      "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
+    name: "Minimalist Chronograph - Heritage Collection",
     rating: {
       stars: 4.7,
       count: 193,
@@ -228,8 +229,9 @@ export const products = [
   },
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
-    image: "images/products/athletic-cotton-socks-6-pairs.jpg",
-    name: "TnsH Signature Monochrome Athletic Socks - Limited 6 Pack Collection",
+    image:
+      "https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    name: "Premium Athletic Collection - Set of 6 Pairs",
     rating: {
       stars: 4.5,
       count: 87,
@@ -239,8 +241,9 @@ export const products = [
   },
   {
     id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
-    image: "images/products/intermediate-composite-basketball.jpg",
-    name: "TnsH Sport Leather Basketball - Urban Edition",
+    image:
+      "https://images.unsplash.com/photo-1519861531473-9200262188bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    name: "Professional Indoor/Outdoor Basketball",
     rating: {
       stars: 4,
       count: 127,
@@ -250,8 +253,9 @@ export const products = [
   },
   {
     id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
-    image: "images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg",
-    name: "Essentials Premium Egyptian Cotton T-Shirt - Teal Duo Pack",
+    image:
+      "https://images.unsplash.com/photo-1512327428889-607eeb19efe8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    name: "Pure Cotton Essential Tees - Premium 2-Pack",
     rating: {
       stars: 4.5,
       count: 56,

@@ -226,7 +226,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 40px;
-  gap: 10px;
 }
 
 .new-arrival-item {
@@ -343,6 +342,10 @@
 
   .small-collection-section {
     padding: 40px 15px;
+  }
+  .new-arrivals-container1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
