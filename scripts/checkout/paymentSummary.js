@@ -6,11 +6,31 @@ import { formatcurrency } from "../utils/money.js";
 export function renderPaymentSummary() {
   let productPriceCents = 0;
   let shippingPriceCents = 0;
+
+  // Check if cart exists and has items
+  if (!cart || cart.length === 0) {
+    console.log("Cart is empty in payment summary");
+    renderEmptyPaymentSummary();
+    return;
+  }
+
+  let itemCount = 0;
+
   cart.forEach((cartItem) => {
     const product = getProduct(cartItem.id);
-    productPriceCents += product.priceCents * cartItem.quantity;
 
-    const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
+    // Skip if product not found
+    if (!product) {
+      console.error(`Product not found with ID: ${cartItem.id}`);
+      return; // Skip this iteration
+    }
+
+    productPriceCents += product.priceCents * cartItem.quantity;
+    itemCount += cartItem.quantity;
+
+    const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId) || {
+      priceincents: 0,
+    };
     shippingPriceCents += deliveryOption.priceincents;
   });
 
@@ -25,7 +45,7 @@ export function renderPaymentSummary() {
    <div class="payment-summary-title">Order Summary</div>
 
           <div class="payment-summary-row">
-            <div>Items (3):</div>
+            <div>Items (${itemCount}):</div>
             <div class="payment-summary-money">$${formatcurrency(
               productPriceCents
             )}</div>
@@ -64,6 +84,24 @@ export function renderPaymentSummary() {
           </button>
   `;
   document.querySelector(".js-payment-summary").innerHTML = paymentSummaryHTML;
+}
+
+function renderEmptyPaymentSummary() {
+  const emptyPaymentSummaryHTML = `
+    <div class="payment-summary-title">Order Summary</div>
+    <div class="payment-summary-row">
+      <div>Your cart is empty</div>
+    </div>
+    <div class="payment-summary-row total-row">
+      <div>Order total:</div>
+      <div class="payment-summary-money">$0.00</div>
+    </div>
+    <a href="index.html" class="place-order-button button-primary">
+      Continue Shopping
+    </a>
+  `;
+  document.querySelector(".js-payment-summary").innerHTML =
+    emptyPaymentSummaryHTML;
 }
 
 renderPaymentSummary();

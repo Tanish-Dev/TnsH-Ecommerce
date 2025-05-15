@@ -1,13 +1,32 @@
 import formatcurrency from "../scripts/utils/money.js";
 
+// Function to normalize ratings to 0.5 increments
+function normalizeRating(rating) {
+  // Round to nearest 0.5
+  return Math.round(rating * 2) / 2;
+}
+
 export function getProduct(productsId) {
+  if (!productsId) {
+    console.error("Invalid product ID requested");
+    return null;
+  }
+
   let matchingitem;
 
-  products.forEach((product) => {
-    if (product.id === productsId) {
-      matchingitem = product;
+  try {
+    products.forEach((product) => {
+      if (product.id === productsId) {
+        matchingitem = product;
+      }
+    });
+
+    if (!matchingitem) {
+      console.error(`Product not found with ID: ${productsId}`);
     }
-  });
+  } catch (error) {
+    console.error(`Error finding product with ID: ${productsId}`, error);
+  }
 
   return matchingitem;
 }
@@ -23,7 +42,11 @@ class Product {
     this.id = productdetails.id;
     this.image = productdetails.image;
     this.name = productdetails.name;
-    this.rating = productdetails.rating;
+    // Normalize rating to 0.5 increments
+    this.rating = {
+      stars: normalizeRating(productdetails.rating.stars),
+      count: productdetails.rating.count,
+    };
     this.priceCents = productdetails.priceCents;
     this.keywords = productdetails.keywords;
   }
@@ -50,6 +73,159 @@ const product1 = new Product({
 console.log(product1);
 
 export const products = [
+  {
+    id: "02e3a47e-dd68-467e-9f71-8bf6f723fdae",
+    image:
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80",
+    name: "Fine Cotton Button-Down Shirt - Crisp White",
+    rating: {
+      stars: 4.5,
+      count: 363,
+    },
+    priceCents: 6499,
+    keywords: ["shirt", "button-down", "apparel", "mens", "fashion"],
+    type: "clothing",
+    sizeChartLink: "images/clothing-size-chart.png",
+  },
+  {
+    id: "8a53b080-6d40-4a65-ab26-b24ecf700bce",
+    image:
+      "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
+    name: "Leather Watch with Minimalist Dial - Timeless Collection",
+    rating: {
+      stars: 4.7,
+      count: 193,
+    },
+    priceCents: 12110,
+    keywords: ["watch", "leather", "accessories", "unisex", "fashion"],
+  },
+  {
+    id: "10ed8504-57db-433c-b0a3-fc71a35c88a1",
+    image: "images/products/knit-athletic-sneakers-pink.webp",
+    name: "Agility Performance Knit Trainers - Blush Pink",
+    rating: {
+      stars: 4,
+      count: 89,
+    },
+    priceCents: 3390,
+    keywords: ["shoes", "running shoes", "footwear", "womens"],
+  },
+  {
+    id: "77a845b1-16ed-4eac-bdf9-5b591882113d",
+    image:
+      "https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&auto=format&fit=crop&w=770&q=80",
+    name: "Cashmere Blend Oversized Scarf - Winter Luxe Collection",
+    rating: {
+      stars: 4.8,
+      count: 312,
+    },
+    priceCents: 10747,
+    keywords: [
+      "scarf",
+      "cashmere",
+      "winter",
+      "accessories",
+      "womens",
+      "fashion",
+    ],
+  },
+  {
+    id: "36c64692-677f-4f58-b5ec-0dc2cf109e27",
+    image:
+      "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=770&q=80",
+    name: "TnsH Satin Finish Evening Clutch - Noir Collection",
+    rating: {
+      stars: 5,
+      count: 679,
+    },
+    priceCents: 3899,
+    keywords: ["bags", "clutch", "evening", "accessories", "womens", "fashion"],
+  },
+  {
+    id: "aaa65ef3-8d6f-4eb3-bc9b-a6ea49047d8f",
+    image:
+      "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?ixlib=rb-1.2.1&auto=format&fit=crop&w=770&q=80",
+    name: "Woven Straw Tote Bag - Summer Essential Collection",
+    rating: {
+      stars: 4.5,
+      count: 1045,
+    },
+    priceCents: 5799,
+    keywords: [
+      "bags",
+      "tote",
+      "summer",
+      "beach",
+      "accessories",
+      "womens",
+      "fashion",
+    ],
+  },
+  {
+    id: "bc2847e9-5323-403f-b7cf-57fde044a955",
+    image: "images/products/men-cozy-fleece-zip-up-hoodie-red.jpg",
+    name: "Alpine Comfort Full-Zip Hoodie - Ruby Red Edition",
+    rating: {
+      stars: 4.5,
+      count: 3157,
+    },
+    priceCents: 2400,
+    keywords: ["sweaters", "hoodies", "apparel", "mens"],
+  },
+  {
+    id: "f0f8c2b4-6ac0-4a37-9b45-d5a165a1a92c",
+    image:
+      "https://images.unsplash.com/photo-1542295669297-4d352b042bca?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+    name: "TnsH Oversized Linen Button-Up Shirt - Ivory Collection",
+    rating: {
+      stars: 4.8,
+      count: 423,
+    },
+    priceCents: 4999,
+    keywords: ["shirts", "linen", "apparel", "womens"],
+    type: "clothing",
+    sizeChartLink: "images/clothing-size-chart.png",
+  },
+  {
+    id: "e9c5d6b2-0134-4c39-9352-5186c0e5d370",
+    image:
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=776&q=80",
+    name: "Signature Pleated Midi Skirt - Ivory White",
+    rating: {
+      stars: 4.7,
+      count: 289,
+    },
+    priceCents: 6999,
+    keywords: ["skirts", "womens", "apparel", "fashion"],
+    type: "clothing",
+    sizeChartLink: "images/clothing-size-chart.png",
+  },
+  {
+    id: "d4b8c5a7-9f30-42eb-8d47-41f2b8a74839",
+    image:
+      "https://images.unsplash.com/photo-1543076447-215ad9ba6923?ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80",
+    name: "TnsH Premium Leather Biker Jacket - Vintage Black",
+    rating: {
+      stars: 4.9,
+      count: 352,
+    },
+    priceCents: 19999,
+    keywords: ["jackets", "leather", "outerwear", "apparel", "mens"],
+    type: "clothing",
+    sizeChartLink: "images/clothing-size-chart.png",
+  },
+  {
+    id: "b7a9c4e2-3d56-48f1-90c8-76d2e5a91f83",
+    image:
+      "https://images.unsplash.com/photo-1554188248-986adbb73be4?ixlib=rb-1.2.1&auto=format&fit=crop&w=770&q=80",
+    name: "Designer Tortoise Shell Sunglasses - Urban Collection",
+    rating: {
+      stars: 4.6,
+      count: 178,
+    },
+    priceCents: 5999,
+    keywords: ["sunglasses", "accessories", "eyewear", "fashion"],
+  },
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
@@ -523,5 +699,13 @@ export const products = [
 ].map((productDetails) => {
   return new Product(productDetails);
 });
+
+// Test to verify normalization is working
+console.log("Rating normalization examples:");
+console.log("4.1 -> ", normalizeRating(4.1)); // Should round to 4
+console.log("4.2 -> ", normalizeRating(4.2)); // Should round to 4
+console.log("4.3 -> ", normalizeRating(4.3)); // Should round to 4.5
+console.log("4.7 -> ", normalizeRating(4.7)); // Should round to 4.5
+console.log("4.8 -> ", normalizeRating(4.8)); // Should round to 5
 
 console.log(products);

@@ -19,10 +19,27 @@ console.log(deliveryDate.format("dddd, MMMM D"));
 export function renderOrderSummary() {
   let checkoutproductsHTMl = "";
 
+  // Check if cart exists and has items
+  if (!cart || cart.length === 0) {
+    document.querySelector(".js-checkout-products").innerHTML = `
+      <div style="text-align: center; padding: 20px;">
+        <p>Your cart is empty.</p>
+        <a href="index.html" style="display: inline-block; background-color: #000; color: white; padding: 10px 20px; text-decoration: none; margin-top: 10px;">Continue Shopping</a>
+      </div>
+    `;
+    return;
+  }
+
   cart.forEach((cartItem) => {
     const productsId = cartItem.id;
 
     let matchingitem = getProduct(productsId);
+
+    // Skip if product not found
+    if (!matchingitem) {
+      console.error(`Product not found with ID: ${productsId}`);
+      return; // Skip this item
+    }
 
     const deliveryOptionId = cartItem.deliveryOptionId;
 

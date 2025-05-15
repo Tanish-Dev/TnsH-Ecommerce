@@ -1,4 +1,12 @@
-export let cart = JSON.parse(localStorage.getItem("cart"));
+export let cart;
+
+try {
+  cart = JSON.parse(localStorage.getItem("cart"));
+  console.log("Cart loaded from localStorage:", cart);
+} catch (error) {
+  console.error("Error loading cart from localStorage:", error);
+  cart = null;
+}
 
 if (!cart) {
   cart = [
@@ -13,10 +21,18 @@ if (!cart) {
       deliveryOptionId: "2",
     },
   ];
+  // Save the default cart to localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+  console.log("Default cart initialized:", cart);
 }
 
 function savetostorage() {
-  localStorage.setItem("cart", JSON.stringify(cart));
+  try {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log("Cart saved to localStorage:", cart);
+  } catch (error) {
+    console.error("Error saving cart to localStorage:", error);
+  }
 }
 
 export function addtocart(productsId) {
