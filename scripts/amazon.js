@@ -1,6 +1,7 @@
 import { cart, addtocart } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatcurrency } from "./utils/money.js";
+import { showProductDetail } from "./product-detail.js";
 
 // Limit the featured products to the first 8 to reduce scrolling
 const featuredProducts = products.slice(0, 8);
@@ -8,7 +9,9 @@ const featuredProducts = products.slice(0, 8);
 let productsHTMl = "";
 
 featuredProducts.forEach((product) => {
-  productsHTMl += `<div class="product-container">
+  productsHTMl += `<div class="product-container js-product-container" data-product-id="${
+    product.id
+  }">
           <div class="product-image-container">
             <img
               class="product-image"
@@ -74,6 +77,9 @@ function updateCartCount() {
 
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   button.addEventListener("click", (event) => {
+    // Stop event propagation to prevent opening product detail when clicking the button
+    event.stopPropagation();
+
     document
       .querySelector(`.js-added-to-cart${button.dataset.productId}`)
       .classList.add("added");
@@ -85,5 +91,13 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
     const productsId = button.dataset.productId;
     addtocart(productsId);
     updateCartCount();
+  });
+});
+
+// Add event listeners to product containers to show product details
+document.querySelectorAll(".js-product-container").forEach((container) => {
+  container.addEventListener("click", () => {
+    const productId = container.dataset.productId;
+    showProductDetail(productId);
   });
 });

@@ -23,12 +23,19 @@
       }
     </style>
 
+    <!-- Load Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
     <!-- Here are the CSS files for this page. -->
     <link rel="stylesheet" href="styles/shared/general.css" />
     <link rel="stylesheet" href="styles/shared/header.css" />
     <link rel="stylesheet" href="styles/shared/components.css" />
     <link rel="stylesheet" href="styles/shared/modern-ui.css" />
     <link rel="stylesheet" href="styles/shared/hero.css" />
+    <link rel="stylesheet" href="styles/shared/product-detail.css" />
     <link rel="stylesheet" href="styles/shared/footer.css" />
     <link rel="stylesheet" href="styles/pages/our-collections.css" />
     <link
@@ -59,11 +66,11 @@
         </div>
       </div>
 
-      <a href="index.html" class="amazon-header-center-section">
-        <a href="index.html" class="header-link logo-link">
+      <div class="amazon-header-center-section">
+        <a href="index.html" class="header-link logo-link" title="Home">
           <h1 class="brand-logo">TnsH</h1>
         </a>
-      </a>
+      </div>
 
       <div class="amazon-header-right-section">
         <div class="search-container">
@@ -78,11 +85,21 @@
           </button>
         </div>
 
-        <a href="orders.html" class="orders-link header-link">
+        <a
+          href="orders.html"
+          class="orders-link header-link"
+          title="Orders"
+          aria-label="View your orders"
+        >
           <i class="fas fa-box"></i>
         </a>
 
-        <a href="checkout.html" class="cart-link header-link">
+        <a
+          href="checkout.html"
+          class="cart-link header-link"
+          title="Cart"
+          aria-label="View your shopping cart"
+        >
           <i class="fas fa-shopping-bag"></i>
           <div class="cart-quantity js-cart-quantity">0</div>
         </a>

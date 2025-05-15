@@ -1,6 +1,7 @@
 import { products } from "../data/products.js";
 import { formatcurrency } from "./utils/money.js";
 import { cart, addtocart } from "../data/cart.js";
+import { showProductDetail } from "./product-detail.js";
 
 // Render all products on the collections page
 function renderAllProducts() {
@@ -15,7 +16,9 @@ function renderAllProducts() {
 
   products.forEach((product) => {
     productsHTML += `
-      <div class="collection-product">
+      <div class="collection-product js-collection-product" data-product-id="${
+        product.id
+      }">
         <div class="collection-product-image-container">
           <img
             class="collection-product-image"
@@ -60,10 +63,13 @@ function renderAllProducts() {
   productsContainer.innerHTML = productsHTML;
 }
 
-// Initialize event listeners for Add to Cart buttons
+// Initialize event listeners for Add to Cart buttons and product details
 function initializeEventListeners() {
   document.querySelectorAll(".js-add-to-cart").forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+      // Stop propagation to prevent opening product detail when clicking the button
+      event.stopPropagation();
+
       const productId = button.dataset.productId;
 
       // Show the "Added" message
@@ -81,6 +87,14 @@ function initializeEventListeners() {
       // Add to cart
       addtocart(productId);
       updateCartCount();
+    });
+  });
+
+  // Add click event to show product details for collection products
+  document.querySelectorAll(".js-collection-product").forEach((container) => {
+    container.addEventListener("click", () => {
+      const productId = container.dataset.productId;
+      showProductDetail(productId);
     });
   });
 }
