@@ -55,7 +55,7 @@ products.forEach((product) => {
 
           <button class="add-to-cart-button button-secondary js-add-to-cart" data-product-id="${
             product.id
-          }">Shop Now</button>
+          }">Add to Cart</button>
         </div>`;
 });
 
