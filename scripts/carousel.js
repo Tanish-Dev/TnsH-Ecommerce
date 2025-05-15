@@ -1,54 +1,64 @@
 // Trending Products Carousel Functionality
+// Using high-quality lifestyle imagery from Unsplash with grayscale aesthetic
+// to match the Summer Essentials section style
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Sample trending products curated for TnsH aesthetic
+  // Curated lifestyle products with high-quality imagery in a consistent aesthetic
   const trendingProducts = [
     {
-      image: "images/products/women-stretch-popover-hoodie-black.jpg",
-      name: "Minimalist Popover Hoodie",
+      image:
+        "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+      name: "Summer Linen Collection",
       price: "45.99",
       rating: 4.5,
     },
     {
-      image: "images/products/men-navigator-sunglasses-brown.jpg",
-      name: "Premium Navigator Sunglasses",
-      price: "32.99",
-      rating: 4.7,
-    },
-    {
-      image: "images/products/women-chiffon-beachwear-coverup-black.jpg",
-      name: "Chiffon Coverup Dress",
+      image:
+        "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+      name: "Urban Essentials",
       price: "39.90",
       rating: 4.8,
     },
     {
-      image: "images/products/women-beach-sandals.jpg",
-      name: "Handcrafted Beach Sandals",
-      price: "32.90",
-      rating: 4.4,
+      image:
+        "https://images.unsplash.com/photo-1550614000-4895a10e1bfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+      name: "Men's Heritage Collection",
+      price: "52.90",
+      rating: 4.7,
     },
     {
-      image: "images/products/men-chino-pants-beige.jpg",
-      name: "Classic Tailored Chinos",
-      price: "49.90",
-      rating: 4.9,
-    },
-    {
-      image: "images/products/knit-athletic-sneakers-gray.jpg",
-      name: "Modern Knit Sneakers",
-      price: "55.90",
-      rating: 4.3,
-    },
-    {
-      image: "images/products/double-elongated-twist-french-wire-earrings.webp",
-      name: "Twist French Earrings",
-      price: "17.90",
+      image:
+        "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+      name: "Coastal Comfort Edit",
+      price: "38.90",
       rating: 4.6,
     },
     {
-      image: "images/products/luxury-tower-set-6-piece.jpg",
-      name: "Premium Towel Set",
-      price: "35.90",
+      image:
+        "https://images.unsplash.com/photo-1465408953385-7c4627c29435?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+      name: "Resort Wear Collection",
+      price: "32.90",
+      rating: 4.9,
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+      name: "Weekend Getaway Edit",
+      price: "59.90",
+      rating: 4.3,
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1503342394128-c104d54dba01?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+      name: "Sunset Wardrobe",
+      price: "19.90",
+      rating: 4.6,
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+      name: "Modern Classics",
+      price: "34.90",
       rating: 4.2,
     },
   ];
@@ -76,8 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <h3 class="carousel-product-name">${product.name}</h3>
         <div class="carousel-product-rating">${ratingStars}</div>
-        <div class="carousel-product-price">$${product.price}</div>
-        <button class="carousel-add-to-cart button-secondary js-add-to-cart" data-product-id="${product.id}">Add to Cart</button>
+        <div class="carousel-product-price">from $${product.price}</div>
+        <button class="carousel-add-to-cart button-secondary js-add-to-cart" data-product-id="${product.id}">Explore Collection</button>
       </div>
     `;
 

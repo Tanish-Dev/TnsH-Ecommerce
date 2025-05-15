@@ -262,6 +262,7 @@
   height: 38vw;
   overflow: hidden;
   position: relative;
+  background-color: #f9f9f9;
 }
 
 .new-arrival-image {
@@ -273,6 +274,7 @@
 
 .new-arrival-item:hover .new-arrival-image {
   transform: scale(1.05);
+  filter: brightness(1.05);
 }
 
 .new-arrival-details {

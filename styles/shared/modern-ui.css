@@ -143,6 +143,8 @@
 }
 
 .carousel-product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .carousel-image-container {
@@ -157,12 +159,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s ease;
-  filter: brightness(1.02);
+  transition: all 0.7s ease;
+  filter: grayscale(100%);
 }
 
 .carousel-product:hover .carousel-image {
   transform: scale(1.03);
+  filter: grayscale(0%);
 }
 
 .carousel-product-name {
